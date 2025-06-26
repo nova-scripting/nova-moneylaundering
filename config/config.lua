@@ -6,8 +6,8 @@
  |_|  |_| |____/ \___| \_/ \___|_|\___/| .__/|_| |_| |_|\___|_| |_|\__|  
                                        |_|    
 
-                        https://mdev-scripts.tebex.io/
-                    https://mdev-scripts.gitbook.io/docs
+                        https://nova-scripts.tebex.io/
+                    https://nova-scripts.gitbook.io/docs
 ]]--
 
 Config = {}
@@ -67,13 +67,13 @@ Config.InteractionLocations = {
             scale = 1.0,                                  -- Default blip scale = 1.0 higher is bigger and lower is smaller
             name = "Money Laundry"                        -- The name for the blip that you will see on the map
         },
-        trigger = "mdev-moneylaundering:client:openMenu",
+        trigger = "ns-moneylaundering:client:openMenu",
         requiredClockedIn = false,
         interactText = "[E] Enter laundry location"
     },
     ["Spawn Vehicle"] = {
         coords = vector3(-612.5318, -1608.7010, 27.8996),
-        trigger = "mdev-moneylaundering:client:spawnVehicle",
+        trigger = "ns-moneylaundering:client:spawnVehicle",
         vehicle = {
             model = "burrito",
             plateText = "laundry",
@@ -84,7 +84,7 @@ Config.InteractionLocations = {
     },
     ["Despawn Vehicle"] = {
         coords = vector3(-610.5338, -1600.8970, 27.7510),
-        trigger = "mdev-moneylaundering:client:despawnVehicle",
+        trigger = "ns-moneylaundering:client:despawnVehicle",
         requiredClockedIn = true,
         interactText = "[E] Remove Vehicle"
     }
