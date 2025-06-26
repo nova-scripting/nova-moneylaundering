@@ -44,7 +44,7 @@ local function WashMoney()
 
         if skillCheck then
         notification("Laundry System", "You have finished the minigame, you will continue laundering", 2500, 'success')
-        TriggerEvent('mdev-moneylaundering:startlaundryprocess')
+        TriggerEvent('nv-moneylaundering:startlaundryprocess')
         else
             notification("Laundry System", "You have failed the minigame, go to the next location.", 2500, 'error')
         end
@@ -257,8 +257,8 @@ end)
 
 -- //Events\\ --
 
-RegisterNetEvent("mdev-moneylaundering:client:openMenu")
-AddEventHandler("mdev-moneylaundering:client:openMenu", function()
+RegisterNetEvent("nv-moneylaundering:client:openMenu")
+AddEventHandler("nv-moneylaundering:client:openMenu", function()
     lib.registerContext({
         id = 'laundry_menu',
         title = 'Laundry Menu', 
@@ -358,8 +358,8 @@ AddEventHandler("mdev-moneylaundering:client:openMenu", function()
     lib.showContext('laundry_menu')
 end)
 
-RegisterNetEvent('mdev-moneylaundering:startlaundryprocess')
-AddEventHandler('mdev-moneylaundering:startlaundryprocess', function()
+RegisterNetEvent('nv-moneylaundering:startlaundryprocess')
+AddEventHandler('nv-moneylaundering:startlaundryprocess', function()
     local playerPed = PlayerPedId()
     local animDict = "mp_car_bomb"        -- Animation dictionary
     local animClip = "car_bomb_mechanic"  -- Animation clip
@@ -393,14 +393,14 @@ AddEventHandler('mdev-moneylaundering:startlaundryprocess', function()
     ClearPedTasks(playerPed)
 
     if success then
-        TriggerServerEvent('mdev-moneylaundering:givemoney')
+        TriggerServerEvent('nv-moneylaundering:givemoney')
     else
         notification("Laundry System", "Laundering cancelled...", 2500, 'warning')
     end
 end)
 
-RegisterNetEvent("mdev-moneylaundering:client:spawnVehicle")
-AddEventHandler("mdev-moneylaundering:client:spawnVehicle", function()
+RegisterNetEvent("nv-moneylaundering:client:spawnVehicle")
+AddEventHandler("nv-moneylaundering:client:spawnVehicle", function()
     if not busspawned then
         if not injob then 
             local playerPed = PlayerPedId()
@@ -433,8 +433,8 @@ AddEventHandler("mdev-moneylaundering:client:spawnVehicle", function()
     end
 end)
 
-RegisterNetEvent("mdev-moneylaundering:client:despawnVehicle")
-AddEventHandler("mdev-moneylaundering:client:despawnVehicle", function()
+RegisterNetEvent("nv-moneylaundering:client:despawnVehicle")
+AddEventHandler("nv-moneylaundering:client:despawnVehicle", function()
     local ped = PlayerPedId()
     local vehicle = GetVehiclePedIsIn(ped, false)
     local vehicleModel = Config.InteractionLocations["Spawn Vehicle"].vehicle.model
