@@ -12,8 +12,8 @@ local function isAtLaundryLocation(coords)
 end
 
 -- //Events\\ --
-RegisterServerEvent('mdev-moneylaundering:givemoney')
-AddEventHandler('mdev-moneylaundering:givemoney', function()
+RegisterServerEvent('nv-moneylaundering:givemoney')
+AddEventHandler('nv-moneylaundering:givemoney', function()
     local Player = source
     local ped = GetPlayerPed(Player)
     local playerCoords = GetEntityCoords(ped)
@@ -35,14 +35,14 @@ AddEventHandler('mdev-moneylaundering:givemoney', function()
     local currentTime = os.time()
     
     if lastMoneyLaundry[Player] and (currentTime - lastMoneyLaundry[Player] < Config.WashDuration / 1000) then
-        DropPlayer(Player, "Kicked by: [mdev-moneylaundering], Reason: How are you doing this so fast?.")
-        print("[mdev-moneylaundering] Player " .. GetPlayerName(Player) .. " was kicked for money laundering spam.")
+        DropPlayer(Player, "Kicked by: [nv-moneylaundering], Reason: How are you doing this so fast?.")
+        print("[nv-moneylaundering] Player " .. GetPlayerName(Player) .. " was kicked for money laundering spam.")
         return
     end
 
     if not isAtLaundryLocation(playerCoords) then
-        DropPlayer(Player, "Kicked by: [mdev-moneylaundering], Reason: Exploiting money laundering outside valid locations.")
-        print("[mdev-moneylaundering] Player " .. GetPlayerName(Player) .. " was kicked for attempting money laundering outside valid locations.")
+        DropPlayer(Player, "Kicked by: [nv-moneylaundering], Reason: Exploiting money laundering outside valid locations.")
+        print("[nv-moneylaundering] Player " .. GetPlayerName(Player) .. " was kicked for attempting money laundering outside valid locations.")
         return
     end
     
