@@ -81,34 +81,6 @@ Each location includes:
 - Laundering machine coordinates
 - Custom interaction text
 
-## 🎮 Usage
-
-### For Players
-
-1. **Start the Job**
-   - Go to the main laundry location (marked on map)
-   - Use the interaction menu to get disguised
-   - Spawn a work vehicle
-
-2. **Launder Money**
-   - Drive to any laundering location
-   - Enter the building through the marked door
-   - Approach the laundering machine
-   - Complete the skill check minigame
-   - Wait for the laundering process to complete
-
-3. **Complete the Job**
-   - Return to the main location
-   - Despawn the vehicle
-   - Remove disguise to return to normal clothes
-
-### For Administrators
-
-- Monitor laundering activities through Discord webhooks
-- Adjust tax rates and money limitations in config
-- Add/remove laundering locations as needed
-- Configure gang job tax rates
-
 ## 🔧 Customization
 
 ### Adding New Locations
@@ -177,17 +149,6 @@ Webhook.URL = 'YOUR_DISCORD_WEBHOOK_URL'
    - Check if player has sufficient funds
    - Ensure tax rates are properly configured
 
-3. **Locations not working**
-   - Verify coordinates are correct
-   - Check if IPLs are loaded (if using custom interiors)
-   - Ensure blips are enabled in config
-
-### Debug Mode
-Enable debug mode in config to see detailed console messages:
-```lua
-Config.DebugMode = true
-```
-
 ## 📝 License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
@@ -212,5 +173,6 @@ Stay updated with the latest features and bug fixes by:
 - **Dependencies**: ox_lib
 
 ---
+
 
 **Note**: This script is designed for roleplay servers. Ensure it complies with your server's rules and regulations.
