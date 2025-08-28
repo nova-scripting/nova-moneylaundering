@@ -2,7 +2,7 @@ fx_version 'cerulean'
 games {'gta5'}
 lua54 'yes'
 
-author 'Milo | mdev-scripts'
+author 'Milo | Nova Scripts'
 description 'Money laundering script for ESX and QBCore frameworks.'
 version '1.0.0'
 
